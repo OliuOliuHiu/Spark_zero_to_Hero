@@ -1,0 +1,11 @@
+# ignore data folder
+data/
+
+# ignore jupyter checkpoints everywhere
+**/.ipynb_checkpoints/
+
+# ignore trash folders
+**/.Trash-1000/
+
+# keep notebook files
+!notebooks/*.ipynb

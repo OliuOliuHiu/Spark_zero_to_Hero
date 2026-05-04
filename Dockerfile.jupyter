@@ -1,0 +1,25 @@
+FROM apache/spark:3.5.1
+
+USER root
+
+RUN apt-get update && apt-get install -y \
+    python3-pip \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN pip3 install --no-cache-dir \
+    pyspark==3.5.1 \
+    jupyterlab \
+    notebook \
+    pandas \
+    numpy \
+    matplotlib 
+
+RUN mkdir -p /home/spark && \
+    chown -R spark:spark /home/spark
+
+USER spark
+
+ENV HOME=/home/spark
+
+WORKDIR /opt/spark/notebooks
+CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root"]
