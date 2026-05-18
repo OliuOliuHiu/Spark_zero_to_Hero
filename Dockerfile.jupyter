@@ -12,7 +12,8 @@ RUN pip3 install --no-cache-dir \
     notebook \
     pandas \
     numpy \
-    matplotlib 
+    matplotlib \
+    faker 
 
 RUN mkdir -p /home/spark && \
     chown -R spark:spark /home/spark
