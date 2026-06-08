@@ -63,6 +63,6 @@ services:
       - spark-data:/opt/spark/work-dir
     depends_on:
       - spark-master
-
+      
 volumes:
   spark-data:
